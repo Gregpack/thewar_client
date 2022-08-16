@@ -113,7 +113,8 @@ MoveOrder create_move_order(int unit_id, Direction where) {
 }
 
 SkillOrder create_skill_order(int unit_id, int x, int y) {
-    return {.unitId = unit_id, .skillActivator = {.x = x, .y = y}};
+    SkillActivator skillActivator = {.x = x, .y = y};
+    return {.unitId = unit_id, .skillActivator = skillActivator};
 }
 
 DestroyOrder create_destroy_order(int barrack_id) {
