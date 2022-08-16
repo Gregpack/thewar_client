@@ -5,7 +5,6 @@ std::string get_name() {
 }
 
 bool has_built = false;
-int counter = 0;
 
 OrderMessage get_next_move(GameStateDto game_state, int player_id) {
     if (has_built) {
@@ -15,11 +14,11 @@ OrderMessage get_next_move(GameStateDto game_state, int player_id) {
     int xCoord = player.baseX + 1;
     int yCoord = player.baseY + 1;
     OrderMessage order_message = OrderMessage();
-    BuildOrder buildOrder = BuildOrder();
-    buildOrder.senderId = player_id;
-    buildOrder.x = xCoord;
-    buildOrder.y = yCoord;
-    buildOrder.unitType = FOOTMAN;
+
+    BuildOrder buildOrder = create_build_order(xCoord, yCoord, FOOTMAN);
+    vector<UnitDto> units = get_my_units(game_state, player_id);
+
+    buildOrder.x += 5;
     order_message.addOrder(buildOrder);
     has_built = true;
     return order_message;
