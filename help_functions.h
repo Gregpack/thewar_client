@@ -14,15 +14,15 @@ using namespace thewar::dto;
 using namespace thewar::actions;
 using namespace thewar::orders;
 
-vector<UnitDto> get_enemy_units(GameStateDto gameStateDto, int player_id);
+vector<UnitDto> get_enemy_units(GameStateDto &gameStateDto, int player_id);
 
-vector<UnitDto> get_my_units(GameStateDto gameStateDto, int player_id);
+vector<UnitDto> get_my_units(GameStateDto &gameStateDto, int player_id);
 
-PlayerDto get_player(GameStateDto gameStateDto, int player_id);
+PlayerDto get_player(GameStateDto &gameStateDto, int player_id);
 
-vector<BarrackDto> get_my_barracks(GameStateDto gameStateDto, int player_id);
+vector<BarrackDto> get_my_barracks(GameStateDto &gameStateDto, int player_id);
 
-vector<BarrackDto> get_enemy_barracks(GameStateDto gameStateDto, int player_id);
+vector<BarrackDto> get_enemy_barracks(GameStateDto &gameStateDto, int player_id);
 
 UnitDto get_unit(GameStateDto &gameStateDto, int unit_id);
 
