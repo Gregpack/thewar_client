@@ -48,6 +48,8 @@ DestroyOrder create_destroy_order(int barrack_id);
 
 StayStillOrder create_stay_order(int unit_id);
 
-vector<UnitDto> get_enemies_in_range(GameStateDto &gameStateDto, int unit_id);
+vector<UnitDto> get_enemies_in_range(GameStateDto &gameStateDto, int unit_id, int range);
+
+vector<UnitDto> get_enemies_in_attack_range(GameStateDto &gameStateDto, int unit_id);
 
 #endif //JNI_CLIENT_HELP_FUNCTIONS_H

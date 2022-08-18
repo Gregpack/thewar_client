@@ -128,7 +128,7 @@ StayStillOrder create_stay_order(int unit_id) {
     return {.unitId = unit_id};
 }
 
-vector<UnitDto> get_enemies_in_range(GameStateDto &gameStateDto, int unit_id) {
+vector<UnitDto> get_enemies_in_range(GameStateDto &gameStateDto, int unit_id, int range) {
     vector<UnitDto> enemies = vector<UnitDto>();
     UnitDto unit = get_unit(gameStateDto, unit_id);
     int positionY = unit.y;
@@ -151,4 +151,9 @@ vector<UnitDto> get_enemies_in_range(GameStateDto &gameStateDto, int unit_id) {
         }
     }
     return enemies;
+}
+
+vector<UnitDto> get_enemies_in_attack_range(GameStateDto &gameStateDto, int unit_id) {
+    UnitDto unit = get_unit(gameStateDto, unit_id);
+    return get_enemies_in_range(gameStateDto, unit_id, unit.attack.attackRange);
 }
